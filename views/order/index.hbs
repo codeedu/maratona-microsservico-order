@@ -1,0 +1,58 @@
+<script type="text/babel">
+    function Page() {
+
+        function labelStatus(status) {
+            switch (status) {
+                case 1:
+                    return 'Pendente';
+                case 2:
+                    return 'Entregue';
+            }
+        }
+
+        return (
+                <MUI.Container>
+                    <MUI.Typography variant={"h4"}>Listagem de pedidos</MUI.Typography>
+                    <MUI.Box dir={'rtl'} paddingBottom={2}>
+                        <MUI.Button
+                                title="Adicionar novo pedido"
+                                color="primary"
+                                variant="contained"
+                                href="/orders/create"
+                        >
+                            Novo pedido
+                        </MUI.Button>
+                    </MUI.Box>
+                    <MUI.Table>
+                        <MUI.TableHead>
+                            <MUI.TableRow>
+                                <MUI.TableCell>ID</MUI.TableCell>
+                                <MUI.TableCell>Motorista</MUI.TableCell>
+                                <MUI.TableCell>Destino</MUI.TableCell>
+                                <MUI.TableCell>Entregue?</MUI.TableCell>
+                                <MUI.TableCell>Ações</MUI.TableCell>
+                            </MUI.TableRow>
+                        </MUI.TableHead>
+                        <MUI.TableBody>
+                            {{#forEach data}}
+                                <MUI.TableRow>
+                                    <MUI.TableCell>{{id}}</MUI.TableCell>
+                                    <MUI.TableCell>{{driver_name}}</MUI.TableCell>
+                                    <MUI.TableCell>Destino {{location_id}}</MUI.TableCell>
+                                    <MUI.TableCell>{labelStatus({{status}})}</MUI.TableCell>
+                                    <MUI.TableCell>
+                                        <a
+                                           href="{{MICRO_MAPPING_URL}}/orders/{{id}}/mapping"
+                                           target="_blank"
+                                        >
+                                            Ver mapa
+                                        </a>
+                                    </MUI.TableCell>
+                                </MUI.TableRow>
+                            {{/forEach}}
+                        </MUI.TableBody>
+                    </MUI.Table>
+                </MUI.Container>
+        );
+    }
+</script>

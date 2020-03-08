@@ -1,0 +1,47 @@
+<script type="text/babel">
+    function Page() {
+        const [driver, setDriver] = React.useState("");
+        const [location, setLocation] = React.useState("");
+        return (
+                <React.Fragment>
+                    <MUI.Typography variant="h4">Novo pedido</MUI.Typography>
+                    <form action="/orders" method="post">
+                        <MUI.TextField
+                                select
+                                name="driver"
+                                label="Motorista"
+                                margin="normal"
+                                variant="outlined"
+                                fullWidth
+                                value={driver}
+                                onChange={(event) => setDriver(event.target.value)}
+                        >
+                            <MUI.MenuItem value="" disabled>
+                                <em>Selecione o motorista</em>
+                            </MUI.MenuItem>
+                            {{#forEach drivers}}
+                                <MUI.MenuItem value="{{uuid}},{{name}}">{{name}}</MUI.MenuItem>
+                            {{/forEach}}
+                        </MUI.TextField>
+
+                        <MUI.TextField
+                                select
+                                name="location"
+                                label="Destino"
+                                margin="normal"
+                                variant="outlined"
+                                fullWidth
+                                value={location}
+                                onChange={(event) => setLocation(event.target.value)}
+                        >
+                            <MUI.MenuItem value="" disabled>
+                                <em>Selecione a localização</em>
+                            </MUI.MenuItem>
+                            <MUI.MenuItem value="1/28.3645,-81.24653">Orlando</MUI.MenuItem>
+                        </MUI.TextField>
+                        <MUI.Button type="submit" variant="contained" color="primary">Enviar</MUI.Button>
+                    </form>
+                </React.Fragment>
+        )
+    }
+</script>
