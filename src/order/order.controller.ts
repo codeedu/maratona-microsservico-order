@@ -4,7 +4,7 @@ import {InjectRepository} from "@nestjs/typeorm";
 import {Repository} from "typeorm";
 import {DriverHttpService} from "./driver-http/driver-http.service";
 
-@Controller('orders')
+@Controller('orders') // /orders
 export class OrderController {
 
     constructor(

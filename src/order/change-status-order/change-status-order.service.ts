@@ -19,7 +19,7 @@ export class ChangeStatusOrderService {
         routingKey: 'orders.change-status',
         queue: 'micro-orders/change-status'
     })
-    public async rpcHandler(message) {
+    public async rpcHandler(message) { //id, status
         const order = await this.orderRepo.findOne(message.id);
         order.status = message.status;
         return await this.orderRepo.save(order);

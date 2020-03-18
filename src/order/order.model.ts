@@ -21,7 +21,7 @@ export class Order {
     driver_name: string;
 
     @Column()
-    location_id: number;
+    location_id: number; //destino
 
     @Column("simple-array")
     location_geo: number[];
