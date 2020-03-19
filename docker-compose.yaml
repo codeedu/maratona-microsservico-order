@@ -4,7 +4,7 @@ services:
 
   app:
     build: .
-    entrypoint: ./.docker/entrypoint.sh
+    #entrypoint: ./.docker/entrypoint.sh
     container_name: micro-orders-app
     environment:
       - CHOKIDAR_USEPOLLING=true

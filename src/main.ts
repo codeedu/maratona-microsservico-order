@@ -23,6 +23,6 @@ async function bootstrap() {
   app.engine('hbs', hbs.engine);
   app.setViewEngine('hbs');
 
-  await app.listen(3000);
+  await app.listen(process.env.APP_PORT);
 }
 bootstrap();
