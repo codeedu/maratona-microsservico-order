@@ -8,7 +8,7 @@ steps:
     #   args: ['run', 'build']
   
     - name: 'gcr.io/cloud-builders/docker'
-      args: ['build', '--tag=gcr.io/$PROJECT_ID/maratona-order:$SHORT_SHA', '.']
+      args: ['build', '-f Dockerfile.prod','--tag=gcr.io/$PROJECT_ID/maratona-order:$SHORT_SHA', '.']
   
     - id: "Pushing  Image"
       name: 'gcr.io/cloud-builders/docker'
