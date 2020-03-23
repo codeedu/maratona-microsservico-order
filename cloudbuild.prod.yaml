@@ -5,8 +5,7 @@ steps:
   
     # - name: node
     #   entrypoint: npm
-    #   args: ['run', 'build']
-  
+    #   args: ['run', 'build'] 
     - name: 'gcr.io/cloud-builders/docker'
       args: ['build', '-f','Dockerfile.prod','--tag=gcr.io/$PROJECT_ID/maratona-order:$SHORT_SHA', '.']
   
