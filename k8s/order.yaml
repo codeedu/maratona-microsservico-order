@@ -85,7 +85,7 @@ spec:
         name: http
         protocol: HTTP
       hosts:  
-      - "project.maratona.fullcycle.com.br"
+      - "*"
 
 ---
   
