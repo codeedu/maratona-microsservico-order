@@ -23,6 +23,6 @@ export class ChangeStatusOrderService {
         const order = await this.orderRepo.findOne(message.id);
         order.status = message.status;
         await this.orderRepo.save(order);
-        return true;
+        return 1;
     }
 }
