@@ -22,6 +22,7 @@ export class ChangeStatusOrderService {
     public async rpcHandler(message) { //id, status
         const order = await this.orderRepo.findOne(message.id);
         order.status = message.status;
-        return await this.orderRepo.save(order);
+        await this.orderRepo.save(order);
+        return true;
     }
 }
