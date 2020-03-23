@@ -7,7 +7,7 @@ metadata:
 data:
   env: |
     APP_PORT=3000
-    MICRO_DRIVERS_URL=
+    MICRO_DRIVERS_URL=http://34.66.48.153
     MICRO_MAPPING_URL=http://map.project.maratona.fullcycle.com.br
     RABBITMQ_HOST=rabbit-rabbitmq
     RABBITMQ_USER=admin
