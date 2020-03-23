@@ -14,7 +14,7 @@ import {ConfigModule} from "@nestjs/config";
       }),
       TypeOrmModule.forRoot({
           type: 'mysql',
-          host: '10.65.6.152',
+          host: process.env.MYSQL_HOST,
           port: 3306,
           username: process.env.MYSQL_USER,
           password: process.env.MYSQL_PASSWORD,
